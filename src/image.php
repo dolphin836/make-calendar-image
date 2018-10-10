@@ -208,22 +208,22 @@ class Image
     private function init()
     {
         // 一年中的第几天
-        $this->day = date("z", $this->today);
+        $this->day      = date("z", $this->today);
         // 年
-        $this->y = date("Y", $this->today);
+        $this->y        = date("Y", $this->today);
         // 月
-        $this->m = date("n", $this->today);
+        $this->m        = date("n", $this->today);
         // 日
-        $this->d = date("j", $this->today);
+        $this->d        = date("j", $this->today);
         // 百分比，两位小数
-        $this->per = round(($this->day / 365) * 100, 2);
+        $this->per      = round(($this->day / 365) * 100, 2);
         // 已过去的长度
         $this->pass_len = ceil($this->len * ($this->per / 100));
 
         // 日历
-        $cale = $this->calendar->solar($this->y, $this->m, $this->d);
+        $cale           = $this->calendar->solar($this->y, $this->m, $this->d);
 
-        $this->w = $cale['week_name'];
+        $this->w        = $cale['week_name'];
 
         // 拼接展示字符串
         $this->non_text = $cale['ganzhi_year'] . '年 ' . $cale['lunar_month_chinese'] . $cale['lunar_day_chinese'];
@@ -259,7 +259,7 @@ class Image
     private function frame()
     {
         $pass_color = $this->pass_color;
-        $bg_color = $this->bg_color;
+        $bg_color   = $this->bg_color;
 
         $this->img->rectangle(16, 16, 585, 785, function ($draw) use ($bg_color, $pass_color) {
             $draw->background($bg_color);
