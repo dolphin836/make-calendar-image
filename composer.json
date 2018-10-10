@@ -1,0 +1,23 @@
+{
+    "name": "dolphin.wang/make-calendar-image",
+    "description": "生成一张日历图片",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "wanghaibing",
+            "email": "wanghaibing@shein.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "intervention/image": "^2.4",
+        "overtrue/chinese-calendar": "^0.0.10",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dolphin\\Wang\\Every\\": "src/"
+        }
+    }
+}
